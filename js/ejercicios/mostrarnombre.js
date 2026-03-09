@@ -6,4 +6,4 @@ console.log("Hola " + nombre + " " + Apellido);
 //mostrar un mensaje al usuario
 //alert("Tu nombre y apellido es: " + nombre + " " + Apellido);
 
-document.writeln(`<p> "Tu nombre y apellido es: ${nombre} ${Apellido}" </p>`)
+document.writeln(`<p>Tu nombre y apellido es: ${nombre} ${Apellido}</p>`)
