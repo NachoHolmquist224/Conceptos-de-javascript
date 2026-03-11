@@ -3,22 +3,25 @@ const pantalla = document.getElementById("pantalla");
 let saldo = 10000;
 
 
-switch (opcion) {
+do{
+  switch (opcion) {
   case 1:
     console.log("Consultar saldo");
+    alert("Tu saldo es de $" + saldo)
     pantalla.innerHTML = `<p>Tu saldo es de $${saldo}</p>`;
     break;
   case 2:
     console.log("Ingresar dinero");
     const ingreso = parseFloat(prompt("Ingrese la cantidad a depositar"));
     saldo += ingreso;
+    alert("Tu saldo actual es de $" + saldo)
     pantalla.innerHTML = `<p>Tu saldo actual es de $${saldo}</p>`;
     break;
   case 3:
     console.log("Retirar dinero");
     const retiro = parseFloat(prompt("Ingrese la cantidad a retirar"));
     if (retiro > saldo) {
-      console.log("Saldo insuficiente");
+      alert("Saldo insuficiente");
       pantalla.innerHTML = `<p>Saldo insuficiente</p>`;
     }
     else{
@@ -27,7 +30,9 @@ switch (opcion) {
     }  
     break;
   default:
-    console.log("Opción no válida");
+    alert("Opción no válida");
     pantalla.innerHTML = `<p>Opción no válida</p>`;
     break;
 }
+}
+while(confirm("¿Desea realizar otra operación?"))
