@@ -42,4 +42,4 @@ saludarpersona(nombre, edad)
 // const preciofinal = aplicardescuento(precio, descuento)
 
 const pantalla = document.getElementById("pantalla")
-pantalla.innerHTML += `<p>El precio del producto es $${precio}, con el descuento del ${descuento}%, el precio final es de $${aplicardescuento}</p>`
+pantalla.innerHTML += `<p>El precio del producto es $${precio}, con el descuento del ${descuento}%, el precio final es de $${aplicardescuento(precio, descuento)}</p>`
