@@ -71,5 +71,21 @@ mostrarpeliculas("Eliminamos el elemento 3 del array con splice")
 console.log(peliculas[1].includes("Shrek"));
 console.log(peliculas[1].includes("Shrek"));
 
-const sagashrek = peliculas.filter((pelicula)=> pelicula.includes("Shrek"));
+const sagashrek = peliculas.filter((pelicula)=> pelicula.includes("Intensamente"));
 console.log(sagashrek);
+
+// Buscar un elemento en particular en un array
+
+const pelibuscada = peliculas.find((peli)=> peli === "Shrek");
+const pelibuscada2 = peliculas.find((peli)=> peli === "El espanta tiburones");
+console.log(`Ejemplo de Find buscando Shrek: ${pelibuscada}`);
+console.log(`Ejemplo de Find buscando El espanta tiburones: ${pelibuscada2}`);
+
+// En que posicion del array esta un elemento buscado
+
+const indicepelibuscada = peliculas.findIndex((peli)=> peli === "Shrek");
+const indicepelibuscada2 = peliculas.findIndex((peli)=> peli === "El espanta tiburones");
+console.log(`Ejemplo de FindIndex buscando Shrek: ${indicepelibuscada}`);
+console.log(`Ejemplo de FindIndex buscando El espanta tiburones: ${indicepelibuscada2}`);
+
+
