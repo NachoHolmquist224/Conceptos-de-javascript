@@ -47,7 +47,7 @@ mostrarpeliculas("Agregamos La vida es bella al principio del array con unshift"
 peliculas.push("Matilda");
 mostrarpeliculas("Agregamos Matilda al final del array con push");
 
-peliculas.splice(4,0, "El espanta tiburones");
+peliculas.splice(4,0, "Shrek 2");
 mostrarpeliculas("Agregamos El espanta tiburones en la posicion 4 del array con splice");
 
 // Modificar elementos de un array
@@ -63,15 +63,16 @@ mostrarpeliculas("Eliminamos el primer elemento del array con shift")
 peliculas.pop()
 mostrarpeliculas("Eliminamos el ultimo elemento del array con pop")
 
-peliculas.splice(3,1) // Si no le indicamos la cantidad borra todo desde la posicion 3
-mostrarpeliculas("Eliminamos el elemento 3 del array con splice")
+peliculas.splice(2,1) // Si no le indicamos la cantidad borra todo desde la posicion 3
+mostrarpeliculas("Eliminamos el elemento 2 del array con splice")
 
 // Filtrar elementos de un array
 
 console.log(peliculas[1].includes("Shrek"));
 console.log(peliculas[1].includes("Shrek"));
 
-const sagashrek = peliculas.filter((pelicula)=> pelicula.includes("Intensamente"));
+
+const sagashrek = peliculas.filter((pelicula)=> pelicula.includes("Shrek"));
 console.log(sagashrek);
 
 // Buscar un elemento en particular en un array
@@ -88,4 +89,12 @@ const indicepelibuscada2 = peliculas.findIndex((peli)=> peli === "El espanta tib
 console.log(`Ejemplo de FindIndex buscando Shrek: ${indicepelibuscada}`);
 console.log(`Ejemplo de FindIndex buscando El espanta tiburones: ${indicepelibuscada2}`);
 
+// Mostrar el array de pelis de Shrek
 
+pantalla.innerHTML += "<h2 class= text-danger>Peliculas de Shrek</h2>";
+
+let listasagashrek = sagashrek.map((peli)=> `<li>${peli}</li>`)
+
+listasagashrek += `<ul>${listasagashrek}</ul>`;
+
+pantalla.innerHTML += listasagashrek
