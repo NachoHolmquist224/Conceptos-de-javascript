@@ -95,6 +95,19 @@ pantalla.innerHTML += "<h2 class= text-danger>Peliculas de Shrek</h2>";
 
 let listasagashrek = sagashrek.map((peli)=> `<li>${peli}</li>`)
 
-listasagashrek += `<ul>${listasagashrek}</ul>`;
+pantalla.innerHTML += `<ul>${listasagashrek}</ul>`
 
-pantalla.innerHTML += listasagashrek
+// Operador SPREAD
+
+const frutas = ["🍎","🍉","🍈"];
+const verduras = ["🥔","🥕","🍆"];
+const copiafrutas = frutas;
+
+const listacompras = [...frutas, ...verduras]
+
+console.log(listacompras);
+
+// Operador REDUCE
+
+const carrito = [100, 350, 1200]
+
