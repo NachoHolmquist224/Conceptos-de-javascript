@@ -16,11 +16,16 @@ const pelicula = {
     elenco : ["actor1", "actor2", "actor3"],    
     añoestreno : 2023,
     //metodos
-    reproducir : function(){
-        console.log = "Reproduciendo pelicula"
+    reproducir:function(){
+        console.log(this)
+        const texto =`<p class="lead">Comenzo la pelicula ${this.titulo} ▶️</p>`
+        console.log("Reproduciendo pelicula");
+        return texto;
     },
-    stop : function(){
-        console.log = "Pelicula detenida"
+    stop: function(){
+        const texto =`<p class="lead">Se detuvo la pelicula ${this.titulo} ⏸️</p>`
+        console.log("Pelicula detenida");
+        return texto;
     },
 }
 
@@ -30,7 +35,7 @@ pantalla.innerHTML = `<p>${pelicula}</p>`
 
 // Como mostrar las propiedades de un objeto
 
-pantalla.innerHTML = `<p>Titulo: ${pelicula.titulo}</p>`
+pantalla.innerHTML += `<p>Titulo: ${pelicula.titulo}</p>`
 pantalla.innerHTML += `<p>Duración: ${pelicula.duración}</p>`
 pantalla.innerHTML += `<p>Genero: ${pelicula.genero}</p>`
 pantalla.innerHTML += `<p>Año de estreno: ${pelicula.añoestreno}</p>`
@@ -38,12 +43,20 @@ pantalla.innerHTML += `<p>Año de estreno: ${pelicula.añoestreno}</p>`
 // Como mostrar todas las propiedades de un objeto (for.....in)
 pantalla.innerHTML += "<h2>Propiedades del objeto</h2>"
 
-let propiedadespelicula;
+let propiedadespelicula
 
 for(const propiedad in pelicula){
-    const valor = pelicula[propiedad]
-    propiedadespelicula += `<p>${propiedad}: ${valor}</p>`
+    if (typeof pelicula[propiedad] !== "function"){
+        const valor = pelicula[propiedad]
+        propiedadespelicula += `<p>${propiedad}: ${valor}</p>`
+    }
 }
+
+// Mostrar el tipo de dato de cada propiedad del objeto
+
+console.log(typeof pelicula.titulo);
+console.log(typeof pelicula.reproducir);
+console.log(typeof pelicula.añoestreno);
 
 pantalla.innerHTML += propiedadespelicula
 
@@ -56,3 +69,16 @@ pantalla.innerHTML += `<p>Estado: ${pelicula.estado}</p>`
 
 pelicula.estado = false;
 pantalla.innerHTML += `<p>Estado: ${pelicula.estado}</p>`
+
+// Eliminar una propiedad del objeto
+
+delete pelicula.estado;
+pantalla.innerHTML += `<p>Estado eliminado: ${pelicula.estado}</p>`
+console.log(pelicula);
+
+// Usar los metodos del objeto
+
+pantalla.innerHTML += pelicula.reproducir()
+
+pantalla.innerHTML += pelicula.stop()
+console.log(this)
